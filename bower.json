@@ -15,10 +15,8 @@
         "url": "git://github.com/IonDen/ion.rangeSlider.git"
     },
     "main": [
-        "js/ion.rangeSlider.js",
-        "css/ion.rangeSlider.css",
-        "css/ion.rangeSlider.skinFlat.css",
-        "img/sprite-skin-flat.png"
+        "lib/ion.rangeSlider.umd.cjs",
+        "lib/ion.rangeSlider.min.css"
     ],
     "moduleType": [
         "globals"

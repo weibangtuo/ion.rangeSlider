@@ -4,6 +4,10 @@ Ion.RangeSlider. Is an easy, flexible and responsive range slider with tons of o
 
 ***
 
+⚠️NOTE: v3.0.0 is **breaking** upgrade because we removed jQuery. If you need compatibility with legacy browsers or jQuery, v2.x.x is recommended.
+
+***
+
 * Version: 3.0.0
 * <a href="http://ionden.com/a/plugins/ion.rangeSlider/">Project page and demos</a>
 * <a href="https://github.com/IonDen/ion.rangeSlider/archive/3.0.0.zip">Download ZIP</a>
@@ -11,8 +15,8 @@ Ion.RangeSlider. Is an easy, flexible and responsive range slider with tons of o
 
 ## Description
 * Ion.RangeSlider — cool, comfortable, responsive and easily customizable range slider
+* Writing in pure JS and CSS. You can simply port the plugin to platforms such as React, Vue and so on
 * Supports events and public methods, has flexible settings, can be completely altered with CSS
-* Cross-browser: Google Chrome, Mozilla Firefox 3.6+, Opera 12+, Safari 5+, Internet Explorer 8+
 * Ion.RangeSlider supports touch-devices (iPhone, iPad, Nexus, etc.).
 * Ion.RangeSlider freely distributed under terms of <a href="http://ionden.com/a/plugins/licence.html" target="_blank">MIT licence</a>.
 * With this plugin you will be able to build beautiful range sliders, like this:
@@ -48,13 +52,23 @@ Ion.RangeSlider. Is an easy, flexible and responsive range slider with tons of o
 
 ## Usage
 
+### For browser
+
 Add the following libraries to the page:
 * ion.rangeSlider.umd.cjs
 
 Add the following stylesheets to the page:
 * ion.rangeSlider.min.css
 
+### For module
 
+```javascript
+// import style for once
+import 'ion-rangeslider/lib/ion.rangeSlider.min.css'
+import IonRangeSlider from 'ion-rangeslider'
+
+new IonRangeSlider(document.getElementById('id'), options)
+```
 
 ## CDN
 
@@ -101,7 +115,7 @@ The slider overrides a native text <code>input</code> element.
 
 To initialise the slider, call ionRangeSlider on the element:
 ```javascript
-$("#example_id").ionRangeSlider();
+new IonRangeSlider(document.getElementById('example_id'), {})
 ```
 
 
@@ -203,14 +217,14 @@ Obj: {
 ## Creating slider (all params)
 An example of a customised slider:
 ```javascript
-$("#example").ionRangeSlider({
-    skin: "big",
+new IonRangeSlider(document.getElementById('example', {
+    skin: 'big',
     min: 0,
     max: 10000,
     from: 1000,
     to: 9000,
     type: 'double',
-    prefix: "$",
+    prefix: '$',
     grid: true,
     grid_num: 10
 });
@@ -233,8 +247,8 @@ data-grid-num="10"
 To use public methods, at first you must save slider instance to variable:
 ```javascript
 // Launch plugin
-$("#range").ionRangeSlider({
-    type: "double",
+new IonRangeSlider(document.getElementById('range'), {
+    type: 'double',
     min: 0,
     max: 1000,
     from: 200,
@@ -243,7 +257,7 @@ $("#range").ionRangeSlider({
 });
 
 // Saving it's instance to var
-var slider = $("#range").data("ionRangeSlider");
+const slider = document.getElementById('range')._ionRangeSlider
 
 // Fire public method
 slider.reset();
