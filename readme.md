@@ -4,9 +4,9 @@ Ion.RangeSlider. Is an easy, flexible and responsive range slider with tons of o
 
 ***
 
-* Version: 2.3.1 | *Version 3.x is under development now*
+* Version: 3.0.0
 * <a href="http://ionden.com/a/plugins/ion.rangeSlider/">Project page and demos</a>
-* <a href="https://github.com/IonDen/ion.rangeSlider/archive/2.3.1.zip">Download ZIP</a>
+* <a href="https://github.com/IonDen/ion.rangeSlider/archive/3.0.0.zip">Download ZIP</a>
 * [Support the plugin on GitHub sponsors](https://github.com/sponsors/IonDen)
 
 ## Description
@@ -46,16 +46,10 @@ Ion.RangeSlider. Is an easy, flexible and responsive range slider with tons of o
 * <a href="http://ionden.com/a/plugins/ion.rangeSlider/demo_interactions.html" class="switch__item">Interactions demo</a>
 
 
-## Dependencies
-
-* <a href="http://jquery.com/" target="_blank">jQuery 1.8.x+</a>
-
-
 ## Usage
 
 Add the following libraries to the page:
-* jQuery
-* ion.rangeSlider.min.js
+* ion.rangeSlider.umd.cjs
 
 Add the following stylesheets to the page:
 * ion.rangeSlider.min.css
@@ -64,16 +58,13 @@ Add the following stylesheets to the page:
 
 ## CDN
 
-Use [CDNjs](https://cdnjs.com/libraries/ion-rangeslider) or [JSdelivr](https://www.jsdelivr.com/package/npm/ion-rangeslider) to get latest version of plugin and jQuery.
+Use [CDNjs](https://cdnjs.com/libraries/ion-rangeslider) or [JSdelivr](https://www.jsdelivr.com/package/npm/ion-rangeslider) to get latest version of plugin.
 ```html
 <!--Plugin CSS file with desired skin-->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css"/>
-
-<!--jQuery-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/3.0.0/lib/ion.rangeSlider.min.css"/>
 
 <!--Plugin JavaScript file-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/3.0.0/lib/ion.rangeSlider.umd.cjs"></script>   
 ``` 
 
 
@@ -192,8 +183,8 @@ Here you can find bunch of advanced JSFIDDLE demos with different, non-standard 
 Result is object type and passed to callback as first argument:
 ```javascript
 Obj: {
-    "input": object,            // jQuery-link to input
-    "slider": object,           // jQuery-link to sliders container
+    "input": object,            // input Element
+    "slider": object,           // Sliders container element
     "min": 1000,                // MIN value
     "max": 100000,              // MAX values
     "from": 10000,              // FROM value

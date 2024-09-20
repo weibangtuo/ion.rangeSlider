@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ion.RangeSlider Demo</title>
+  <style>
+    .content {
+      margin: 0 auto;
+      width: 960px;
+    }
+
+    pre.language-javascript {
+      background-color: rgba(0, 0, 0, 0.15);
+    }
+  </style>
+</head>
+
+<body>
+  <noscript>
+    We're sorry but the application doesn't work properly without JavaScript enabled.
+    Please enable it to continue.
+  </noscript>
+  <div id="app">
+    <div class="content">
+      <h1>Ion.RangeSlider Demo</h1>
+      <strong>Learn how to use Ion.RangeSlider on several practical demos</strong>
+      <div class="demo">
+
+        <h2 class="--red" id="a_simple">Simple start, basic params</h2>
+
+        <!--DEMO: 0-->
+        <div class="demo__item">
+          <p>Set min value, max value and start point</p>
+
+          <div class="demo__body">
+            <input id="demo_0" type="text" name="" value="" />
+          </div>
+
+          <div class="demo__code">
+            <pre class="language-javascript"><code class="language-javascript">
+      new IonRangeSlider(document.getElementById('demo_0'),  {
+          min: 100,
+          max: 1000,
+          from: 550
+      });
+      </code></pre>
+          </div>
+        </div>
+
+        <!--DEMO: 1-->
+        <div class="demo__item">
+          <p>Set type to double, specify range, show grid and add a prefix "$"</p>
+
+          <div class="demo__body">
+            <input id="demo_1" type="text" name="" value="" />
+          </div>
+
+          <div class="demo__code">
+            <pre class="language-javascript"><code class="language-javascript">
+      new IonRangeSlider(document.getElementById('demo_1'),  {
+          type: 'double',
+          grid: true,
+          min: 0,
+          max: 1000,
+          from: 200,
+          to: 800,
+          prefix: '$'
+      });
+      </code></pre>
+          </div>
+        </div>
+
+        <h2 class="--red" id="a_range">Set up range and step</h2>
+
+        <!--DEMO: 2-->
+        <div class="demo__item">
+          <p>Set up range with negative values</p>
+
+          <div class="demo__body">
+            <input id="demo_2" type="text" name="" value="" />
+          </div>
+
+          <div class="demo__code">
+            <pre class="language-javascript"><code class="language-javascript">
+      new IonRangeSlider(document.getElementById('demo_2'),  {
+          type: 'double',
+          grid: true,
+          min: -1000,
+          max: 1000,
+          from: -500,
+          to: 500
+      });
+      </code></pre>
+          </div>
+        </div>
+
+        <!--DEMO: 3-->
+        <div class="demo__item">
+          <p>Add a step to previous config</p>
+
+          <div class="demo__body">
+            <input id="demo_3" type="text" name="" value="" />
+          </div>
+
+          <div class="demo__code">
+            <pre class="language-javascript"><code class="language-javascript">
+      new IonRangeSlider(document.getElementById('demo_3'),  {
+          type: 'double',
+          grid: true,
+          min: -1000,
+          max: 1000,
+          from: -500,
+          to: 500,
+          step: 250
+      });
+      </code></pre>
+          </div>
+        </div>
+
+        <!--DEMO: 4-->
+        <div class="demo__item">
+          <p>Force fractional values, using fractional step 0.1</p>
+
+          <div class="demo__body">
+            <input id="demo_4" type="text" name="" value="" />
+          </div>
+
+          <div class="demo__code">
+            <pre class="language-javascript"><code class="language-javascript">
+      new IonRangeSlider(document.getElementById('demo_4'),  {
+          type: 'double',
+          grid: true,
+          min: -12.8,
+          max: 12.8,
+          from: -3.2,
+          to: 3.2,
+          step: 0.1
+      });
+      </code></pre>
+          </div>
+        </div>
+
+        <h2 class="--red" id="a_custom">Using array of custom values</h2>
+
+        <!--DEMO: 5-->
+        <div class="demo__item">
+          <p>Set up you own numbers</p>
+
+          <div class="demo__body">
+            <input id="demo_5" type="text" name="" value="" />
+          </div>
+
+          <div class="demo__code">
+            <pre class="language-javascript"><code class="language-javascript">
+      var custom_values = [0, 10, 100, 1000, 10000, 100000, 1000000];
+      
+      // be careful! FROM and TO should be index of values array
+      var my_from = custom_values.indexOf(10);
+      var my_to = custom_values.indexOf(10000);
+      
+      new IonRangeSlider(document.getElementById('demo_5'),  {
+          type: 'double',
+          grid: true,
+          from: my_from,
+          to: my_to,
+          values: custom_values
+      });
+      </code></pre>
+          </div>
+        </div>
+
+        <!--DEMO: 6-->
+        <div class="demo__item">
+          <p>Values array could be anything, even strings</p>
+
+          <div class="demo__body">
+            <input id="demo_6" type="text" name="" value="" />
+          </div>
+
+          <div class="demo__code">
+            <pre class="language-javascript"><code class="language-javascript">
+      new IonRangeSlider(document.getElementById('demo_6'),  {
+          grid: true,
+          from: new Date().getMonth(),
+          values: [
+              "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+              "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+          ]
+      });
+      </code></pre>
+          </div>
+        </div>
+
+        <h2 class="--red" id="a_prettify">Change visual look of numbers (prettify)</h2>
+
+        <!--DEMO: 7-->
+        <div class="demo__item">
+          <p>Improve readability of big numbers, like 10000000000 😄</p>
+
+          <div class="demo__body">
+            <input id="demo_7" type="text" name="" value="" />
+          </div>
+
+          <div class="demo__buttons">
+            <button class="button --small js-btn__d7" data-type="">10000</button>
+            <button class="button --small --active js-btn__d7" data-type=" ">10 000</button>
+            <button class="button --small js-btn__d7" data-type=".">10.000</button>
+            <button class="button --small js-btn__d7" data-type=','>10,000</button>
+            <button class="button --small js-btn__d7" data-type="_">10_000</button>
+          </div>
+
+          <div class="demo__code">
+            <pre class="language-javascript"><code class="language-javascript">
+      new IonRangeSlider(document.getElementById('demo_7'),  {
+          skin: 'big',
+          grid: true,
+          min: 1000,
+          max: 1000000,
+          from: 100000,
+          step: 1000,
+          prettify_enabled: true,
+          prettify_separator: ','
+      });
+      </code></pre>
+          </div>
+        </div>
+
+        <!--DEMO: 8-->
+        <div class="demo__item">
+          <p>Use your own prettify function to transform numbers whatever you like. For example calculating logarithm of
+            a
+            number</p>
+
+          <div class="demo__body">
+            <input id="demo_8" type="text" name="" value="" />
+          </div>
+
+          <div class="demo__code">
+            <pre class="language-javascript"><code class="language-javascript">
+      function my_prettify (n) {
+          var num = Math.log2(n);
+          return n + " &rarr; " + (+num.toFixed(3));
+      }
+      
+      new IonRangeSlider(document.getElementById('demo_8'),  {
+          skin: 'big',
+          grid: true,
+          min: 1,
+          max: 1000,
+          from: 100,
+          prettify: my_prettify
+      });
+      </code></pre>
+          </div>
+        </div>
+
+        <h2 class="--red" id="a_decorate">Decorating numbers with prefixes, postfixes and other symbols</h2>
+
+        <!--DEMO: 9-->
+        <div class="demo__item">
+          <p>Adding currency symbol and + symbol to the maximum number</p>
+
+          <div class="demo__body">
+            <input id="demo_9" type="text" name="" value="" />
+          </div>
+
+          <div class="demo__buttons">
+            <button class="button --small --active js-btn__d9" data-prefix="$">$100</button>
+            <button class="button --small js-btn__d9" data-postfix=" €">100 €</button>
+            <button class="button --small js-btn__d9" data-postfix=" ₽">100 ₽</button>
+          </div>
+
+          <div class="demo__code">
+            <pre class="language-javascript"><code class="language-javascript">
+      new IonRangeSlider(document.getElementById('demo_9'),  {
+          grid: true,
+          min: 0,
+          max: 100,
+          from: 50,
+          step: 5,
+          max_postfix: '+',
+          prefix: '$',
+          // postfix: ' €/ ₽',
+      });
+      </code></pre>
+          </div>
+        </div>
+
+        <!--DEMO: 10-->
+        <div class="demo__item">
+          <p>Using prefix and postfix at the same time</p>
+
+          <div class="demo__body">
+            <input id="demo_10" type="text" name="" value="" />
+          </div>
+
+          <div class="demo__code">
+            <pre class="language-javascript"><code class="language-javascript">
+      new IonRangeSlider(document.getElementById('demo_10'),  {
+          skin: 'round',
+          grid: true,
+          min: 0,
+          max: 100,
+          from: 21,
+          max_postfix: '+',
+          prefix: 'Age: ',
+          postfix: ' years'
+      });
+      </code></pre>
+          </div>
+        </div>
+
+        <!--DEMO: 11-->
+        <div class="demo__item">
+          <p>Taking care of labels collision</p>
+
+          <div class="demo__body">
+            <input id="demo_11" type="text" name="" value="" />
+          </div>
+
+          <div class="demo__buttons">
+            <button class="button --small --active js-btn__d11" data-variant="0">Separate</button>
+            <button class="button --small js-btn__d11" data-variant="1">Collapsed</button>
+            <button class="button --small --fix js-btn__d11" data-sep=" — "> — </button>
+            <button class="button --small --fix js-btn__d11" data-sep=" to "> to </button>
+            <button class="button --small --fix js-btn__d11" data-sep=" &rarr; "> &rarr; </button>
+          </div>
+
+          <div class="demo__code">
+            <pre class="language-javascript"><code class="language-javascript">
+      new IonRangeSlider(document.getElementById('demo_11'),  {
+          type: 'double',
+          grid: true,
+          min: 0,
+          max: 100,
+          from: 47,
+          to: 53,
+          prefix: "Weight: ",
+          postfix: " million pounds",
+          decorate_both: true // false,
+          // values_separator: " to "
+      });
+      </code></pre>
+          </div>
+        </div>
+
+        <h2 class="--red" id="a_ui">Manipulating UI</h2>
+
+        <!--DEMO: 12-->
+        <div class="demo__item">
+          <p>Disable enable any UI elements</p>
+
+          <div class="demo__body">
+            <input id="demo_12" type="text" name="" value="" />
+          </div>
+
+          <div class="demo__buttons">
+            <button class="button --small --active js-btn__d12" data-variant="0">All</button>
+            <button class="button --small js-btn__d12" data-variant="6">None</button>
+            <button class="button --small js-btn__d12" data-variant="2">Grid</button>
+            <button class="button --small js-btn__d12" data-variant="3">MIN/MAX</button>
+            <button class="button --small js-btn__d12" data-variant="4">FROM/TO</button>
+            <button class="button --small js-btn__d12" data-variant="1">In box</button>
+            <button class="button --small js-btn__d12" data-variant="5">Block</button>
+          </div>
+
+          <div class="demo__code">
+            <pre class="language-javascript"><code class="language-javascript">
+      new IonRangeSlider(document.getElementById('demo_12'),  {
+          skin: 'big',
+          type: 'double',
+          min: -100000,
+          max: 100000,
+          from: -100000,
+          to: 100000,
+          step: 10000,
+          grid: true,             // show/hide grid
+          force_edges: false,     // force UI in the box
+          hide_min_max: false,    // show/hide MIN and MAX labels
+          hide_from_to: false,    // show/hide FROM and TO labels
+          block: false            // block instance from changing
+      });
+      </code></pre>
+          </div>
+        </div>
+
+
+        <h2 class="--red" id="a_grid">Customizing Grid</h2>
+
+        <!-- DEMO: 13-->
+        <div class="demo__item">
+          <p>Manipulate the grid using build in parameters</p>
+
+          <div class="demo__body">
+            <input id="demo_13" type="text" name="" value="" />
+          </div>
+
+          <div class="demo__buttons">
+            <button class="button --small --active js-btn__d0" data-variant="0">Normal</button>
+            <button class="button --small js-btn__d0" data-variant="1">10 cells</button>
+            <button class="button --small js-btn__d0" data-variant="2">20 cells</button>
+            <button class="button --small js-btn__d0" data-variant="3">Grid snap</button>
+            <button class="button --small js-btn__d0" data-variant="4">Snap to weird step</button>
+          </div>
+
+          <div class="demo__code">
+            <pre class="language-javascript"><code class="language-javascript">
+    new IonRangeSlider(document.getElementById('demo_0'),  {
+        min: 0,
+        max: 10000,
+        from: 777,
+        step: 1,            // default 1 (set step)
+        grid: true,         // default false (enable grid)
+        grid_num: 4,        // default 4 (set number of grid cells)
+        grid_snap: false    // default false (snap grid to step)
+    });
+    </code></pre>
+          </div>
+        </div>
+
+        <h2 class="--red" id="a_handles">Lock and restrict handles</h2>
+
+        <!--DEMO: 14-->
+        <div class="demo__item">
+          <p>Lock handles to prevent moving</p>
+
+          <div class="demo__body">
+            <input id="demo_14" type="text" name="" value="" />
+          </div>
+
+          <div class="demo__buttons">
+            <button class="button --small --active js-btn__d1" data-variant="0">Unlock both</button>
+            <button class="button --small js-btn__d1" data-variant="1">Lock FROM</button>
+            <button class="button --small js-btn__d1" data-variant="2">Lock TO</button>
+            <button class="button --small js-btn__d1" data-variant="3">Lock both</button>
+          </div>
+
+          <div class="demo__code">
+            <pre class="language-javascript"><code class="language-javascript">
+    new IonRangeSlider(document.getElementById('demo_14'),  {
+        type: 'double',
+        min: 0,
+        max: 10,
+        from: 2,
+        to: 8,
+        grid: true,
+        grid_snap: true,
+        from_fixed: false,  // fix position of FROM handle
+        to_fixed: false     // fix position of TO handle
+    });
+    </code></pre>
+          </div>
+        </div>
+
+        <!--DEMO: 15-->
+        <div class="demo__item">
+          <p>Limit movement of a handle</p>
+
+          <div class="demo__body">
+            <input id="demo_15" type="text" name="" value="" />
+          </div>
+
+          <div class="demo__buttons">
+            <button class="button --small --active js-btn__d2" data-variant="0">Restrict range</button>
+            <button class="button --small js-btn__d2" data-variant="1">Full range</button>
+          </div>
+
+          <div class="demo__code">
+            <pre class="language-javascript"><code class="language-javascript">
+          new IonRangeSlider(document.getElementById('demo_15'),  {
+              type: "single",
+              min: 0,
+              max: 1000,
+              from: 500,
+              grid: true,
+              from_min: 250,      // set min position for FROM handle (replace FROM to TO to change handle)
+              from_max: 750,      // set max position for FROM handle
+              from_shadow: true   // highlight restriction for FROM handle
+          });
+          </code></pre>
+          </div>
+        </div>
+
+        <h2 class="--red" id="a_interval">Manipulating interval</h2>
+
+        <!--DEMO: 16-->
+        <div class="demo__item">
+          <p>Restrict interval size and/or drag it</p>
+
+          <div class="demo__body">
+            <input id="demo_16" type="text" name="" value="" />
+          </div>
+
+          <div class="demo__buttons">
+            <button class="button --small --active js-btn__d3" data-variant="0">Draggable interval</button>
+            <button class="button --small js-btn__d3" data-variant="1">Non draggable interval</button>
+            <button class="button --small js-btn__d3" data-variant="2">Restrict interval size</button>
+          </div>
+
+          <div class="demo__code">
+            <pre class="language-javascript"><code class="language-javascript">
+          new IonRangeSlider(document.getElementById('demo_16'),  {
+              type: 'double',
+              min: 0,
+              max: 1000,
+              from: 400,
+              to: 600,
+              drag_interval: true,
+              min_interval: null,
+              max_interval: null
+          });
+          </code></pre>
+          </div>
+        </div>
+
+        <h2 class="--red" id="a_dates">Working with dates</h2>
+
+        <!--DEMO: 17-->
+        <div class="demo__item">
+          <p>Restrict interval size and/or drag it</p>
+
+          <div class="demo__body">
+            <input id="demo_17" type="text" name="" value="" />
+          </div>
+
+          <div class="demo__buttons">
+            <button class="button --small --active js-btn__d4" data-variant="0">en-US</button>
+            <button class="button --small js-btn__d4" data-variant="1">ru-RU</button>
+            <button class="button --small js-btn__d4" data-variant="2">ko-KR</button>
+            <button class="button --small js-btn__d4" data-variant="3">ar-EG</button>
+            <button class="button --small js-btn__d4" data-variant="4">ja-JA</button>
+            <button class="button --small js-btn__d4" data-variant="5">de-DE</button>
+          </div>
+
+          <div class="demo__code">
+            <pre class="language-javascript"><code class="language-javascript">
+          var lang = "en-US";
+          var year = 2018;
+          
+          function dateToTS (date) {
+              return date.valueOf();
+          }
+          
+          function tsToDate (ts) {
+              var d = new Date(ts);
+          
+              return d.toLocaleDateString(lang, {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric'
+              });
+          }
+          
+          new IonRangeSlider(document.getElementById('demo_17'),  {
+              skin: 'big',
+              type: 'double',
+              grid: true,
+              min: dateToTS(new Date(year, 10, 1)),
+              max: dateToTS(new Date(year, 11, 1)),
+              from: dateToTS(new Date(year, 10, 8)),
+              to: dateToTS(new Date(year, 10, 23)),
+              prettify: tsToDate
+          });
+          </code></pre>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <script type="module" src="src/demo.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,135 @@
+.irs--modern {
+    --irs-height: 55px;
+    --irs-with-grid-height: 55px;
+    --irs-top: 25px;
+    --irs-bottom: 21px;
+    --irs-line-height: 5px;
+    --irs-handle-width: 12px;
+    --irs-handle-height: 13px;
+    --irs-custom-radius: 3px;
+
+    --irs-line-bg-color: #d1d6e0;
+    --irs-bar-color: #20b426;
+
+    --irs-minmax-color: white;
+    --irs-minmax-bg-color: #d1d6e0;
+
+    --irs-label-font-size: 10px;
+    --irs-label-bg-color: #20b426;
+    --irs-label-color: white;
+
+    --irs-grid-height: 25px;
+    --irs-grid-bg-color: #dedede;
+    --irs-grid-text-color: silver;
+    --irs-grid-font-size: 13px;
+
+    --irs-shadow-height: 1px;
+
+    .irs-line {
+        background: linear-gradient(to bottom, #24ca2b 0%, var(--irs-line-bg-color) 100%);
+        border: 1px solid #147318;
+        border-bottom-width: 0;
+        border-radius: var(--irs-line-height);
+    }
+
+    .irs-bar {
+        background: linear-gradient(to bottom, var(--irs-bar-color) 0%, #18891d 100%);
+
+        .irs-bar--single {
+            border-radius: var(--irs-line-height) 0 0 var(--irs-line-height);
+        }
+    }
+
+    .irs-shadow {
+        background-color: fade(var(--irs-line-bg-color), 50%);
+    }
+
+    .irs-handle {
+        top: 37px;
+        width: var(--irs-handle-width);
+        height: var(--irs-handle-height);
+        border: 1px solid #147318;
+        border-top-width: 0;
+        box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+        border-radius: 0 0 3px 3px;
+
+        & > i:nth-child(1) {
+            position: absolute;
+            display: block;
+            top: -4px; left: 1px;
+            width: calc(var(--irs-handle-width) - 6px);
+            height: calc(var(--irs-handle-width) - 6px);
+            border: 1px solid #147318;
+            background: white;
+            transform: rotate(45deg);
+        }
+
+        & > i:nth-child(2) {
+            position: absolute;
+            display: block;
+            box-sizing: border-box;
+            top: 0; left: 0;
+            width: calc(var(--irs-handle-width) - 2);
+            height: calc(var(--irs-handle-height) - 1);
+            background: #e9e6e6;
+            background: linear-gradient(to bottom, white 0%, #e9e6e6 100%);
+            border-radius: 0 0 3px 3px;
+        }
+
+        & > i:nth-child(3) {
+            position: absolute;
+            display: block;
+            box-sizing: border-box;
+            top: 3px; left: 3px;
+            width: 4px; height: 5px;
+            border-left: 1px solid #147318;
+            border-right: 1px solid #147318;
+        }
+
+        &.state_hover,
+        &:hover {
+            border-color: #09320b;
+            background: #c3c7cd;
+            background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(145,155,165,1) 30%,rgba(255,255,255,1) 100%);
+
+            & > i:nth-child(1) {
+                border-color: #09320b;
+            }
+
+            & > i:nth-child(3) {
+                border-color: black;
+            }
+        }
+    }
+
+    .irs-min,
+    .irs-max {
+        font-size: 10px;
+        line-height: 1.333;
+        text-shadow: none;
+        padding: 1px 5px;
+        border-radius: var(--irs-line-height);
+    }
+
+    .irs-from,
+    .irs-to,
+    .irs-single {
+        line-height: 1.333;
+        padding: 1px 5px;
+        border-radius: var(--irs-line-height);
+
+        &:before {
+            position: absolute;
+            display: block;
+            content: "";
+            bottom: -6px;
+            left: 50%;
+            width: 0;
+            height: 0;
+            margin-left: -3px;
+            overflow: hidden;
+            border: 3px solid transparent;
+            border-top-color: var(--irs-label-bg-color);
+        }
+    }
+}

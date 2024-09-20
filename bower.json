@@ -1,6 +1,6 @@
 {
     "name": "ion-rangeslider",
-    "version": "2.3.1",
+    "version": "3.0.0",
     "homepage": "https://github.com/IonDen/ion.rangeSlider",
     "authors": [
         {
@@ -20,14 +20,10 @@
         "css/ion.rangeSlider.skinFlat.css",
         "img/sprite-skin-flat.png"
     ],
-    "dependencies": {
-        "jquery": ">=1.8"
-    },
     "moduleType": [
         "globals"
     ],
     "keywords": [
-        "jquery-plugin",
         "diapason",
         "ion",
         "range",
@@ -35,7 +31,6 @@
     ],
     "license": "MIT",
     "ignore": [
-        "PSD",
-        "ion-rangeSlider.jquery.json"
+        "PSD"
     ]
 }

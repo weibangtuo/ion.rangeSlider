@@ -1,6 +1,7 @@
 {
-    "name": "ion-rangeslider",
-    "version": "2.3.1",
+    "name": "ion-range-slider",
+    "type": "module",
+    "version": "3.0.0",
     "description": "Cool, comfortable and easily customizable range slider with many options and skin support",
     "homepage": "http://ionden.com/a/plugins/ion.rangeSlider/",
     "author": {
@@ -9,9 +10,6 @@
         "url": "https://github.com/IonDen"
     },
     "keywords": [
-        "jquery-plugin",
-        "ecosystem:jquery",
-        "jquery",
         "form",
         "input",
         "range",
@@ -23,7 +21,20 @@
         "noui",
         "skins"
     ],
-    "main": "./js/ion.rangeSlider.js",
+    "main": "./lib/ion.rangeSlider.umd.cjs",
+    "module": "./lib/ion.rangeSlider.js",
+    "exports": {
+        ".": {
+            "import": "./lib/ion.rangeSlider.js",
+            "require": "./lib/ion.rangeSlider.umd.cjs"
+        }
+    },
+    "scripts": {
+        "serve": "vite",
+        "build": "vite build",
+        "build:lib": "LIB_NAME=lib vite build",
+        "lint": "eslint src"
+    },
     "directories": {
         "lib": "js"
     },
@@ -35,13 +46,16 @@
         "url": "https://github.com/IonDen/ion.rangeSlider/issues"
     },
     "license": "MIT",
-    "peerDependencies": {
-        "jquery": ">=1.8"
-    },
     "ignore": [
         ".idea",
         "_tmp",
         "PSD",
         "bower.json"
-    ]
+    ],
+    "devDependencies": {
+        "@eslint/js": "^9.10.0",
+        "eslint": "^9.10.0",
+        "globals": "^15.9.0",
+        "vite": "^5.4.5"
+    }
 }

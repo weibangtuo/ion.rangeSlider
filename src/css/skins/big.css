@@ -1,0 +1,84 @@
+.irs--big {
+    --irs-height: 55px;
+    --irs-with-grid-height: 70px;
+    --irs-top: 33px;
+    --irs-bottom: 16px;
+    --irs-line-height: 12px;
+    --irs-handle-width: 30px;
+    --irs-handle-height: 30px;
+    --irs-custom-radius: 3px;
+
+    --irs-line-bg-color: white;
+    --irs-line-bg-color-start: #ddd;
+    --irs-line-border-color: #ccc;
+
+    --irs-bar-color: #428bca;
+
+    --irs-minmax-color: white;
+    --irs-minmax-bg-color: #9f9f9f;
+
+    --irs-label-font-size: unset;
+    --irs-label-bg-color: #428bca;
+    --irs-label-color: white;
+
+    --irs-shadow-height: 1px;
+
+    --irs-grid-height: 20px;
+    --irs-grid-bg-color: #428bca;
+    --irs-grid-text-color: #428bca;
+    --irs-grid-font-size: 9px;
+
+    .irs-line {
+        background: linear-gradient(to bottom, var(--irs-line-bg-color-start) -50%, var(--irs-line-bg-color) 150%);
+        border: 1px solid var(--irs-line-border-color);
+        border-radius: var(--irs-line-height);
+    }
+
+    .irs-bar {
+        background-color: #92bce0;
+        border: 1px solid var(--irs-bar-color);
+        background: linear-gradient(to bottom, white 0%, var(--irs-bar-color) 30%, #b9d4ec 100%);
+        box-shadow: inset 0 0 1px 1px rgba(255,255,255,0.5);
+
+        .irs-bar--single {
+            border-radius: var(--irs-line-height) 0 0 var(--irs-line-height);
+        }
+    }
+
+    .irs-shadow {
+        background-color: fade(var(--irs-bar-color), 50%);
+    }
+
+    .irs-handle {
+        top: 25px;
+        width: var(--irs-handle-width);
+        height: var(--irs-handle-height);
+        border: 1px solid rgba(0,0,0,0.3);
+        background-color: #cbcfd5;
+        background: linear-gradient(to bottom, white 0%, #B4B9BE 30%, white 100%);
+        box-shadow: 1px 1px 2px rgba(0,0,0,0.2), inset 0 0 3px 1px white;
+        border-radius: var(--irs-handle-width);
+
+        &.state_hover,
+        &:hover {
+            border-color: rgba(0,0,0,0.45);
+            background-color: #939ba7;
+            background: linear-gradient(to bottom, white 0%, #919BA5 30%, white 100%);
+        }
+    }
+
+    .irs-min,
+    .irs-max {
+        padding: 1px 5px;
+        text-shadow: none;
+        border-radius: var(--irs-custom-radius);
+    }
+
+    .irs-from,
+    .irs-to,
+    .irs-single {
+        padding: 1px 5px;
+        background: linear-gradient(to bottom, var(--irs-label-bg-color) 0%, #3071a9 100%);
+        border-radius: var(--irs-custom-radius);
+    }
+}

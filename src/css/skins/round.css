@@ -1,0 +1,90 @@
+/*
+  Skin design by Veaceslav Grimalschi
+  https://github.com/grimalschi
+*/
+
+.irs--round {
+    --irs-top: 36px;
+    --irs-bottom: 21px;
+    --irs-line-height: 4px;
+    --irs-handle-width: 24px;
+    --irs-handle-height: 24px;
+    --irs-custom-radius: 3px;
+
+    --irs-line-bg-color: #dee4ec;
+    --irs-bar-color: #006cfa;
+
+    --irs-minmax-color: #333;
+    --irs-minmax-bg-color: rgba(0,0,0,0.1);
+
+    --irs-label-font-size: 14px;
+    --irs-label-bg-color: #006cfa;
+    --irs-label-color: white;
+
+    --irs-grid-height: 25px;
+    --irs-grid-bg-color: #dedede;
+    --irs-grid-text-color: silver;
+    --irs-grid-font-size: 13px;
+
+
+    --irs-shadow-height: 4px;
+
+    .irs-line {
+        border-radius: var(--irs-line-height);
+    }
+
+    .irs-bar {
+        .irs-bar--single {
+            border-radius: var(--irs-line-height) 0 0 var(--irs-line-height);
+        }
+    }
+
+    .irs-shadow {
+        background-color: fade(var(--irs-line-bg-color), 50%);
+    }
+
+    .irs-handle {
+        top: 26px;
+        width: var(--irs-handle-width);
+        height: var(--irs-handle-height);
+        border: 4px solid #006cfa;
+        background-color: white;
+        border-radius: var(--irs-handle-width);
+        box-shadow: 0 1px 3px rgba(0, 0, 255, 0.3);
+
+        &.state_hover,
+        &:hover {
+            background-color: #f0f6ff;
+        }
+    }
+
+    .irs-min,
+    .irs-max {
+        font-size: 14px;
+        line-height: 1;
+        padding: 3px 5px;
+        border-radius: var(--irs-line-height);
+    }
+
+    .irs-from,
+    .irs-to,
+    .irs-single {
+        line-height: 1;
+        padding: 3px 5px;
+        border-radius: var(--irs-line-height);
+
+        &:before {
+            position: absolute;
+            display: block;
+            content: "";
+            bottom: -6px;
+            left: 50%;
+            width: 0;
+            height: 0;
+            margin-left: -3px;
+            overflow: hidden;
+            border: 3px solid transparent;
+            border-top-color: var(--irs-label-bg-color);
+        }
+    }
+}

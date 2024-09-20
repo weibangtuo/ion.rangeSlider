@@ -1,0 +1,97 @@
+.irs--flat {
+    --irs-height: 40px;
+    --irs-with-grid-height: 60px;
+    --irs-top: 25px;
+    --irs-bottom: 16px;
+    --irs-line-height: 12px;
+    --irs-handle-width: 16px;
+    --irs-handle-height: 18px;
+    --irs-custom-radius: 4px;
+
+    --irs-line-bg-color: #e1e4e9;
+    --irs-bar-color: #ed5565;
+
+    --irs-minmax-color: #999;
+    --irs-minmax-bg-color: #e1e4e9;
+
+    --irs-label-font-size: 10px;
+    --irs-label-bg-color: #ed5565;
+    --irs-label-color: white;
+
+    --irs-shadow-height: 1px;
+
+    --irs-grid-height: 20px;
+    --irs-grid-bg-color: #e1e4e9;
+    --irs-grid-text-color: #999;
+    --irs-grid-font-size: 9px;
+
+    .irs-line {
+        border-radius: var(--irs-custom-radius);
+    }
+
+    .irs-bar {
+        .irs-bar--single {
+            border-radius: var(--irs-custom-radius) 0 0 var(--irs-custom-radius);
+        }
+    }
+
+    .irs-shadow {
+        background-color: var(--irs-line-bg-color);
+    }
+
+    .irs-handle {
+        top: 22px;
+        width: var(--irs-handle-width);
+        height: var(--irs-handle-height);
+        background-color: transparent;
+
+        & > i:first-child {
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            margin-left: -1px;
+            background-color: #da4453;
+        }
+
+        &.state_hover,
+        &:hover {
+            & > i:first-child {
+                background-color: #a43540;
+            }
+        }
+    }
+
+    .irs-min,
+    .irs-max {
+        padding: 1px 3px;
+        font-size: 10px;
+        line-height: 1.333;
+        text-shadow: none;
+        border-radius: var(--irs-custom-radius);
+    }
+
+    .irs-from,
+    .irs-to,
+    .irs-single {
+        line-height: 1.333;
+        padding: 1px 5px;
+        border-radius: var(--irs-custom-radius);
+
+        &:before {
+            position: absolute;
+            display: block;
+            content: "";
+            bottom: -6px;
+            left: 50%;
+            width: 0;
+            height: 0;
+            margin-left: -3px;
+            overflow: hidden;
+            border: 3px solid transparent;
+            border-top-color: var(--irs-label-bg-color);
+        }
+    }
+}

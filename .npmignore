@@ -4,3 +4,4 @@ _tmp
 PSD
 bower.json
 .npmignore
+/dist

@@ -4,6 +4,11 @@
 
 # Update History
 
+### Version 3.0.0. September 20, 2024
+* Replace jQuery with pure JS
+* Replace less with pure CSS
+* Refactor project
+
 ### Version 2.3.1. December 19, 2019
 * Website update
 * Minor bugfixes

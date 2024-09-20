@@ -1,0 +1,187 @@
+:root {
+    --irs-height: 55px;
+    --irs-with-grid-height: 70px;
+    --irs-top: 33px;
+    --irs-bottom: 16px;
+    --irs-line-height: 12px;
+    --irs-handle-width: 30px;
+    --irs-handle-height: 30px;
+    --irs-custom-radius: 3px;
+
+    --irs-line-bg-color: white;
+    --irs-bar-color: #428bca;
+    --irs-shadow-height: 1px;
+
+    --irs-minmax-color: white;
+    --irs-minmax-bg-color: #9f9f9f;
+
+    --irs-label-font-size: unset;
+    --irs-label-bg-color: #428bca;
+    --irs-label-color: white;
+
+    --irs-grid-height: 20px;
+    --irs-grid-bg-color: #000;
+    --irs-grid-text-color: #000;
+    --irs-grid-font-size: 9px;
+}
+
+.irs {
+    position: relative;
+    display: block;
+    -webkit-touch-callout: none;
+    user-select: none;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    height: var(--irs-height);
+
+    &.irs-with-grid {
+        height: var(--irs-with-grid-height);
+    }
+
+    .irs-line {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        outline: none !important;
+        top: var(--irs-top);
+        height: var(--irs-line-height);
+        background-color: var(--irs-line-bg-color);
+    }
+
+    .irs-bar {
+        position: absolute;
+        display: block;
+        left: 0;
+        width: 0;
+        top: var(--irs-top);
+        height: var(--irs-line-height);
+        background-color: var(--irs-bar-color);
+    }
+
+    .irs-shadow {
+        position: absolute;
+        display: none;
+        left: 0;
+        width: 0;
+        height: var(--irs-shadow-height);
+        bottom: var(--irs-bottom);
+    }
+
+    .irs-handle {
+        position: absolute;
+        display: block;
+        box-sizing: border-box;
+        cursor: default;
+        z-index: 1;
+
+        &.type_last {
+            z-index: 2;
+        }
+    }
+
+    .irs-min,
+    .irs-max {
+        position: absolute;
+        display: block;
+        cursor: default;
+        color: var(--irs-minmax-color);
+        background-color: var(--irs-minmax-bg-color);
+        top: 0;
+    }
+
+    .irs-min {
+        left: 0;
+    }
+
+    .irs-max {
+        right: 0;
+    }
+
+    .irs-from,
+    .irs-to,
+    .irs-single {
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        cursor: default;
+        white-space: nowrap;
+        text-shadow: none;
+        font-size: var(--irs-label-font-size);
+        background-color: var(--irs-label-bg-color);
+        color: var(--irs-label-color);
+    }
+
+    .irs-grid {
+        position: absolute;
+        display: none;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: var(--irs-grid-height);
+
+        .irs-grid-pol {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1px;
+            height: 8px;
+            background-color: var(--irs-grid-bg-color);
+
+            &.small {
+                height: 4px;
+            }
+        }
+
+        .irs-grid-text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            white-space: nowrap;
+            text-align: center;
+            font-size: var(--irs-grid-font-size);
+            line-height: 9px;
+            padding: 0 3px;
+            color: var(--irs-grid-text-color);
+        }
+    }
+
+    &.irs-with-grid .irs-grid {
+        display: block;
+    }
+
+    .irs-disable-mask {
+        position: absolute;
+        display: block;
+        top: 0;
+        left: -1%;
+        width: 102%;
+        height: 100%;
+        cursor: default;
+        background: rgba(0, 0, 0, 0.0);
+        z-index: 2;
+    }
+
+    .irs-disabled {
+        opacity: 0.4;
+    }
+}
+
+.irs-hidden-input {
+    position: absolute !important;
+    display: block !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    font-size: 0 !important;
+    line-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden;
+    outline: none !important;
+    z-index: -9999 !important;
+    background: none !important;
+    border-style: solid !important;
+    border-color: transparent !important;
+}

@@ -1,0 +1,100 @@
+.irs--sharp {
+    --irs-top: 30px;
+    --irs-bottom: 21px;
+    --irs-line-height: 2px;
+    --irs-handle-width: 10px;
+    --irs-handle-height: 10px;
+    --irs-custom-radius: 3px;
+
+    --irs-line-bg-color: black;
+    --irs-bar-color: #ee22fa;
+
+    --irs-minmax-color: white;
+    --irs-minmax-bg-color: #a804b2;
+
+    --irs-label-font-size: 14px;
+    --irs-label-bg-color: #a804b2;
+    --irs-label-color: white;
+
+    --irs-grid-height: 25px;
+    --irs-grid-bg-color: #dedede;
+    --irs-grid-text-color: silver;
+    --irs-grid-font-size: 13px;
+
+    --irs-height: 50px;
+    --irs-with-grid-height: 57px;
+    --irs-shadow-height: 1px;
+    line-height: 1;
+
+    .irs-line {
+        border-radius: var(--irs-line-height);
+    }
+
+    .irs-bar {
+        .irs-bar--single {
+            border-radius: var(--irs-line-height) 0 0 var(--irs-line-height);
+        }
+    }
+
+    .irs-shadow {
+        background-color: fade(var(--irs-line-bg-color), 50%);
+    }
+
+    .irs-handle {
+        top: calc(var(--irs-top) - 5px);
+        width: var(--irs-handle-width);
+        height: var(--irs-handle-height);
+        background-color: #a804b2;
+
+        & > i:first-child {
+            position: absolute;
+            display: block;
+            top: 100%;
+            left: 0;
+            width: 0;
+            height: 0;
+            border: 5px solid transparent;
+            border-top-color: #a804b2;
+        }
+
+        &.state_hover,
+        &:hover {
+            background-color: black;
+
+            & > i:first-child {
+                border-top-color: black;
+            }
+        }
+    }
+
+    .irs-min,
+    .irs-max {
+        font-size: 14px;
+        line-height: 1;
+        padding: 3px 4px;
+        opacity: 0.4;
+        border-radius: var(--irs-line-height);
+    }
+
+    .irs-from,
+    .irs-to,
+    .irs-single {
+        line-height: 1;
+        padding: 3px 4px;
+        border-radius: var(--irs-line-height);
+
+        &:before {
+            position: absolute;
+            display: block;
+            content: "";
+            bottom: -6px;
+            left: 50%;
+            width: 0;
+            height: 0;
+            margin-left: -3px;
+            overflow: hidden;
+            border: 3px solid transparent;
+            border-top-color: var(--irs-label-bg-color);
+        }
+    }
+}

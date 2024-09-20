@@ -1,0 +1,66 @@
+/* 
+  Skin design by Veaceslav Grimalschi
+  https://github.com/grimalschi
+*/
+
+.irs--square {
+    --irs-top: 31px;
+    --irs-bottom: 21px;
+    --irs-line-height: 4px;
+    --irs-handle-width: 16px;
+    --irs-handle-height: 16px;
+    --irs-custom-radius: 3px;
+
+    --irs-line-bg-color: #dedede;
+    --irs-bar-color: black;
+
+    --irs-minmax-color: #333;
+    --irs-minmax-bg-color: rgba(0,0,0,0.1);
+
+    --irs-label-font-size: 14px;
+    --irs-label-bg-color: black;
+    --irs-label-color: white;
+
+    --irs-grid-height: 25px;
+    --irs-grid-bg-color: #dedede;
+    --irs-grid-text-color: silver;
+    --irs-grid-font-size: 11px;
+
+    --irs-height: 50px;
+    --irs-with-grid-height: 60px;
+    --irs-shadow-height: 2px;
+
+    .irs-shadow {
+        background-color: var(--irs-line-bg-color);
+    }
+
+    .irs-handle {
+        top: calc(var(--irs-top) - 6px);
+        width: var(--irs-handle-width);
+        height: var(--irs-handle-height);
+        border: 3px solid black;
+        background-color: white;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+
+        &.state_hover,
+        &:hover {
+            background-color: #f0f6ff;
+        }
+    }
+
+    .irs-min,
+    .irs-max {
+        font-size: 14px;
+        line-height: 1;
+        padding: 3px 5px;
+    }
+
+    .irs-from,
+    .irs-to,
+    .irs-single {
+        line-height: 1;
+        padding: 3px 5px;
+    }
+}

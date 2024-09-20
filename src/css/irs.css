@@ -1,0 +1,10 @@
+/* Base styles */
+@import "_base.css";
+
+/* Skins styles */
+@import "skins/flat.css";
+@import "skins/big.css";
+@import "skins/modern.css";
+@import "skins/sharp.css";
+@import "skins/round.css";
+@import "skins/square.css";
