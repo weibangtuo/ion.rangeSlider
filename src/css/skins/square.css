@@ -18,7 +18,7 @@
     --irs-minmax-bg-color: rgba(0,0,0,0.1);
 
     --irs-label-font-size: 14px;
-    --irs-label-bg-color: black;
+    --irs-label-bg-color: var(--irs-bar-color);
     --irs-label-color: white;
 
     --irs-grid-height: 25px;

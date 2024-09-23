@@ -15,7 +15,7 @@
     --irs-minmax-bg-color: #d1d6e0;
 
     --irs-label-font-size: 10px;
-    --irs-label-bg-color: #20b426;
+    --irs-label-bg-color: var(--irs-bar-color);
     --irs-label-color: white;
 
     --irs-grid-height: 25px;
@@ -35,7 +35,7 @@
     .irs-bar {
         background: linear-gradient(to bottom, var(--irs-bar-color) 0%, #18891d 100%);
 
-        .irs-bar--single {
+        &.irs-bar--single {
             border-radius: var(--irs-line-height) 0 0 var(--irs-line-height);
         }
     }

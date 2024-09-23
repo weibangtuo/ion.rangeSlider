@@ -18,14 +18,14 @@
     --irs-minmax-bg-color: #9f9f9f;
 
     --irs-label-font-size: unset;
-    --irs-label-bg-color: #428bca;
+    --irs-label-bg-color: var(--irs-bar-color);
     --irs-label-color: white;
 
     --irs-shadow-height: 1px;
 
     --irs-grid-height: 20px;
-    --irs-grid-bg-color: #428bca;
-    --irs-grid-text-color: #428bca;
+    --irs-grid-bg-color: var(--irs-bar-color);
+    --irs-grid-text-color: var(--irs-bar-color);
     --irs-grid-font-size: 9px;
 
     .irs-line {
@@ -40,7 +40,7 @@
         background: linear-gradient(to bottom, white 0%, var(--irs-bar-color) 30%, #b9d4ec 100%);
         box-shadow: inset 0 0 1px 1px rgba(255,255,255,0.5);
 
-        .irs-bar--single {
+        &.irs-bar--single {
             border-radius: var(--irs-line-height) 0 0 var(--irs-line-height);
         }
     }

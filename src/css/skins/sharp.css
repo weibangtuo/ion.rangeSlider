@@ -31,7 +31,7 @@
     }
 
     .irs-bar {
-        .irs-bar--single {
+        &.irs-bar--single {
             border-radius: var(--irs-line-height) 0 0 var(--irs-line-height);
         }
     }

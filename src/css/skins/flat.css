@@ -15,7 +15,7 @@
     --irs-minmax-bg-color: #e1e4e9;
 
     --irs-label-font-size: 10px;
-    --irs-label-bg-color: #ed5565;
+    --irs-label-bg-color: var(--irs-bar-color);
     --irs-label-color: white;
 
     --irs-shadow-height: 1px;
@@ -30,7 +30,7 @@
     }
 
     .irs-bar {
-        .irs-bar--single {
+        &.irs-bar--single {
             border-radius: var(--irs-custom-radius) 0 0 var(--irs-custom-radius);
         }
     }

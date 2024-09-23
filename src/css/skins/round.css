@@ -18,7 +18,7 @@
     --irs-minmax-bg-color: rgba(0,0,0,0.1);
 
     --irs-label-font-size: 14px;
-    --irs-label-bg-color: #006cfa;
+    --irs-label-bg-color: var(--irs-bar-color);
     --irs-label-color: white;
 
     --irs-grid-height: 25px;
@@ -34,7 +34,7 @@
     }
 
     .irs-bar {
-        .irs-bar--single {
+        &.irs-bar--single {
             border-radius: var(--irs-line-height) 0 0 var(--irs-line-height);
         }
     }
@@ -47,7 +47,7 @@
         top: 26px;
         width: var(--irs-handle-width);
         height: var(--irs-handle-height);
-        border: 4px solid #006cfa;
+        border: 4px solid var(--irs-bar-color);
         background-color: white;
         border-radius: var(--irs-handle-width);
         box-shadow: 0 1px 3px rgba(0, 0, 255, 0.3);
