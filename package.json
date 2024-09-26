@@ -21,14 +21,8 @@
         "noui",
         "skins"
     ],
-    "main": "./lib/ion.rangeSlider.umd.cjs",
-    "module": "./lib/ion.rangeSlider.js",
-    "exports": {
-        ".": {
-            "import": "./lib/ion.rangeSlider.js",
-            "require": "./lib/ion.rangeSlider.umd.cjs"
-        }
-    },
+    "main": "lib/ion.rangeSlider.umd.cjs",
+    "module": "lib/ion.rangeSlider.js",
     "scripts": {
         "serve": "vite",
         "build": "vite build",
